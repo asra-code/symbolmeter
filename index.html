@@ -12,9 +12,12 @@ div {text-align: center;}
   </head>
   <body>
     <script type="text/javascript"> 
-        function noDrag() { 
-            $('#img').attr('draggable', false); 
-        } 
+      var mainimg = document.getElementById("alethiometer");
+        jQuery(function($) {
+   $(mainimg).on( "dragstart", function() {
+        return false;
+   });
+});
     </script> 
     <p>
       <img src="symbolmeter.png" alt="main" id="alethiometer">
