@@ -6,12 +6,16 @@
       p {text-align: center;}
 div {text-align: center;}
 </style>
+     <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+    </script> 
   </head>
   <body>
-    <script>
-$('img').on('dragstart', function(event) { event.preventDefault(); });
-</script>
-    <h1></h1>
+    <script type="text/javascript"> 
+        function noDrag() { 
+            $('#img').attr('draggable', false); 
+        } 
+    </script> 
     <p>
       <img src="symbolmeter.png" alt="main" id="alethiometer">
     </p>
