@@ -8,9 +8,12 @@ div {text-align: center;}
 </style>
   </head>
   <body>
+    <script>
+$('img').on('dragstart', function(event) { event.preventDefault(); });
+</script>
     <h1></h1>
     <p>
-      <img src="symbolmeter.png" alt="main">
+      <img src="symbolmeter.png" alt="main" id="alethiometer">
     </p>
   </body>
 </html>
