@@ -12,6 +12,9 @@ div {text-align: center;}
   -o-user-select: none;
   user-select: none;
 }
+      .nonDraggableImage{
+    -webkit-user-drag: none;
+}
 </style>
     <script> 
     document.getElementById('alethiometer').ondragstart = function () { return false; };
@@ -20,7 +23,7 @@ div {text-align: center;}
   <body>
     
     <p>
-      <img src="symbolmeter.png" alt="main" id="alethiometer">
+      <img src="symbolmeter.png" alt="main" id="alethiometer" class="nonDraggableImage">
     </p>
   </body>
 </html>
