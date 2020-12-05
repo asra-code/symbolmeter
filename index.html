@@ -21,6 +21,47 @@ div {text-align: center;}
 </style>
     <script> 
     document.getElementById('alethiometer').ondragstart = function () { return false; };
+    var img = $('img'), 
+    darkImg, 
+    originalImg = img[0].src,
+    darkFilter = $('<div />').width(img.width()).height(img.height())
+        .attr('id','dark-filter')
+        .css({
+            position: 'absolute',
+            left: '0',
+            top: '0',
+            backgroundColor: "#000000",
+            opacity: 0.0
+        });
+
+
+img.mapster({
+        mapKey: 'state',
+        render_highlight: {
+            altImage: 'https://raw.githubusercontent.com/asra-code/symbolmeter/main/symbolmeterlight.png',
+            strokeWidth: 2,
+            stroke: false,
+            strokeColor: 'eeeeee',
+            fillColor: 'ffffff',
+            fillOpacity: 0.8
+        },
+        render_select: {
+            altImage: 'https://raw.githubusercontent.com/asra-code/symbolmeter/main/symbolmeterlight.png'  
+        }
+    }).bind('mouseover',function() 
+{
+    //$('img.mapster_el')[0].src=darkImg;
+    debugger;
+    img.parent().find(".mapster_el").eq(0).after(darkFilter);
+
+}).bind('mouseout',function(e) 
+{
+    if (!e.relatedTarget) {
+        $('img.mapster_el')[0].src=originalImg;
+        darkFilter.remove();
+    }
+    
+});
     </script> 
   </head>  
   <body>
